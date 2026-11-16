@@ -1,0 +1,32 @@
+{
+  "name": "pike-regex",
+  "version": "0.1.0",
+  "description": "A regular-expression engine that can't be made slow: Thompson NFA + Pike VM in TypeScript.",
+  "type": "module",
+  "main": "src/index.ts",
+  "bin": {
+    "pike-regex": "src/cli.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc -p .",
+    "bench": "node bench/pathological.ts",
+    "build": "esbuild src/index.ts --bundle --format=esm --outfile=dist/pike-regex.js"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "license": "MIT",
+  "keywords": [
+    "regex",
+    "nfa",
+    "pike-vm",
+    "thompson",
+    "redos"
+  ],
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.9.3"
+  }
+}
